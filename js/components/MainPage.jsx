@@ -1,6 +1,8 @@
 // js/components/MainPage.jsx
 import {useEffect, useState} from "react";
 
+
+
 export default function MainPage() {
 	const [records, setRecords] = useState([]);
 
@@ -60,10 +62,13 @@ export default function MainPage() {
 
 	return (
 		<section className="bg-white dark:bg-gray-900">
-			<div className="container px-6 py-10 mx-auto">
-				<h1 className="w-[500px] mx-auto text-center text-6xl">Food Recipe app</h1>
-				<p className="w-[1000px] mx-auto text-center mt-4 text-3xl">Welcome to our food recipe app, where you can discover and create delicious meals that suit your taste and lifestyle. </p>
-
+             
+              <div className="container px-6 py-10 mx-auto">
+				{/* <h1 className="w-[500px] mx-auto text-center text-6xl">Food Recipe app</h1>
+				<p className="w-[1000px] mx-auto text-center mt-4 text-3xl">Welcome to our food recipe app, where you can discover and create delicious meals that suit your taste and lifestyle. </p> */}
+	     
+           <p className="w-[1500px] mx-auto text-center mt-10 text-3xl">
+         Welcome to our food recipe app, where you can discover and create delicious meals that suit your taste and lifestyle. </p> 
 				<div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3">
 					{records.map(record => (
 						<div
@@ -102,6 +107,8 @@ export default function MainPage() {
 					))}
 				</div>
 			</div>
+         
+	
 		</section>
 	)
 }
