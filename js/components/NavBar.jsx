@@ -10,9 +10,9 @@ export default function Navbar() {
     
     const [open, setOpen] = useState(false)
     return (
-        <nav className="flex filter drop-shadow-md bg-white px-4 py-4 h-20 items-center">
+        <nav className="flex filter drop-shadow-md bg-red-50 px-4 py-4 h-20 items-center">
             <div className="w-3/12 flex items-center">
-                <a className="text-2xl font-semibold" href="/">Food Receips App</a>
+                <a className="text-2xl font-semibold" href="/">Food Recipes App</a>
             </div>
             <div className="w-9/12 flex justify-end items-center">
 
@@ -28,12 +28,12 @@ export default function Navbar() {
                 <div className="hidden md:flex ">
                   <div className="pb-2 text-white-600 font-bold hover:bg-purple-600  border-purple-900  md:hover:text-rose-600 md:hover:bg-transparent">
                     <NavLink to="/" >
-                        RECEIPS
+                    RECIPE
                     </NavLink>
                     </div>
                     <div className="pb-2 text-white-600 font-bold hover:bg-purple-600  border-purple-900  md:hover:text-rose-600 md:hover:bg-transparent">
                     <NavLink to="/insert">
-                     ADD RECEIPS
+                     ADD RECIPE
                     </NavLink>
                     </div>
                     <div className="pb-2 text-white-600 font-bold hover:bg-purple-600  border-purple-900  md:hover:text-rose-600 md:hover:bg-transparent">
