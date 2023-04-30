@@ -1,75 +1,48 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
+import { useState } from 'react'
 
-function NavBar() {
-  const [navbar, setNavbar] = useState(false);
-  return (
-    <div>
-      <nav className="w-full bg-teal-500 fixed top-0 left-0 right-0 z-10">
-        <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-          <div>
-            <div className="flex items-center justify-between py-3 md:py-5 md:block">
-              {/* Food Receips App*/}
-              <Link href="/">
-                <h2 className="text-2xl text-cyan-600 font-bold ">Food Receips App</h2>
-              </Link>
-              {/* HAMBURGER BUTTON FOR MOBILE */}
-              <div className="md:hidden">
-                <button
-                  className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                  onClick={() => setNavbar(!navbar)}
-                >
-                  {navbar ? (
-                    <Image src="/close.svg" width={30} height={30} alt="logo" />
-                  ) : (
-                    <Image
-                      src="/hamburger-menu.svg"
-                      width={30}
-                      height={30}
-                      alt="logo"
-                      className="focus:border-none active:border-none"
-                    />
-                  )}
-                </button>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div
-              className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                navbar ? 'p-12 md:p-0 block' : 'hidden'
-              }`}
-            >
-              <ul className="h-screen md:h-auto items-center justify-center md:flex ">
-                <li className="pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0  hover:bg-purple-900  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="http://localhost:3000" onClick={() => setNavbar(!navbar)}>
-                    Receips
-                  </Link>
-                </li>
-                <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="insert" onClick={() => setNavbar(!navbar)}>
-                    Add Receips
-                  </Link>
-                </li>
-                <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="" onClick={() => setNavbar(!navbar)}>
-                    Chat
-                  </Link>
-                </li>
-                {/* <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-purple-600  border-purple-900  md:hover:text-purple-600 md:hover:bg-transparent">
-                  <Link href="#projects" onClick={() => setNavbar(!navbar)}>
-                    Projects
-                  </Link>
-                </li> */}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  );
+function NavLink({to, children}) {
+    return <a href={to} className={`mx-4`}>
+        {children}
+    </a>
 }
 
-export default NavBar;
+export default function Navbar() {
+    
+    const [open, setOpen] = useState(false)
+    return (
+        <nav className="flex filter drop-shadow-md bg-white px-4 py-4 h-20 items-center">
+            <div className="w-3/12 flex items-center">
+                <a className="text-2xl font-semibold" href="/">Food Receips App</a>
+            </div>
+            <div className="w-9/12 flex justify-end items-center">
 
+                <div className="z-50 flex relative w-8 h-8 flex-col justify-between items-center md:hidden" onClick={() => {
+                    setOpen(!open)
+                }}>
+                    {/* hamburger button */}
+                    <span className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${open ? "rotate-45 translate-y-3.5" : ""}`} />
+                    <span className={`h-1 w-full bg-black rounded-lg transition-all duration-300 ease-in-out ${open ? "w-0" : "w-full"}`} />
+                    <span className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${open ? "-rotate-45 -translate-y-3.5" : ""}`} />
+                </div>
+
+                <div className="hidden md:flex ">
+                  <div className="pb-2 text-white-600 font-bold hover:bg-purple-600  border-purple-900  md:hover:text-rose-600 md:hover:bg-transparent">
+                    <NavLink to="/" >
+                        RECEIPS
+                    </NavLink>
+                    </div>
+                    <div className="pb-2 text-white-600 font-bold hover:bg-purple-600  border-purple-900  md:hover:text-rose-600 md:hover:bg-transparent">
+                    <NavLink to="/insert">
+                     ADD RECEIPS
+                    </NavLink>
+                    </div>
+                    <div className="pb-2 text-white-600 font-bold hover:bg-purple-600  border-purple-900  md:hover:text-rose-600 md:hover:bg-transparent">
+                    <NavLink to="/">
+                        CHAT
+                    </NavLink>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    )
+}
