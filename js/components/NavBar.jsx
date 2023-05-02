@@ -37,7 +37,7 @@ export default function Navbar() {
                     </NavLink>
                     </div>
                     <div className="pb-2 text-white-600 font-bold hover:bg-purple-600  border-purple-900  md:hover:text-rose-600 md:hover:bg-transparent">
-                    <NavLink to="/">
+                    <NavLink to="/chat">
                         CHAT
                     </NavLink>
                     </div>
