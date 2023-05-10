@@ -12,7 +12,7 @@ function MessageBox(props) {
 	}, [chatMessages]);
 
 	return (
-		<div className={'h-[400px] overflow-auto px-[20px]'}>
+		<div className={'h-[600px] overflow-auto px-[20px]'}>
 			<ul className={'divide-y divide-gray-200'}>
 				<li className={ 'py-3' }>
 							<span className={ `block text-rose-800 font-bold` }>

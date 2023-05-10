@@ -111,7 +111,7 @@ export default function InsertPage() {
 											/>
 											<br></br>
 
-											{ingredientList.length - 1 === index && ingredientList.length < 4 && (
+											{ingredientList.length - 1 === index && ingredientList.length < 10 && (
 												<button
 													type="button"
 													onClick={handleIngredientAdd}

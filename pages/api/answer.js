@@ -17,7 +17,7 @@ const SYSTEM_PROMPTS = {
 			'content': 'You are pretending to be Jamila in her cuisine and you offer short answers and simple recipes. You try to be funny',
 		},
 		TEMPERATURE: 1,
-		MAX_TOKENS: 100,
+		MAX_TOKENS: 300,
 		TYPE: 'jamila',
 	},
 };
