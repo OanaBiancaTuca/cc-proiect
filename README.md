@@ -2,7 +2,7 @@
 
 Student: Țucă Oana-Bianca, grupa 1121 SIMPRE
 # 1.Intoroducere: 
-    Acest proiect are la bază o aplicație web dezvoltată cu ajoutorul tehnologiei Next.js .
+Acest proiect are la bază o aplicație web dezvoltată cu ajoutorul tehnologiei Next.js .
 
 Serviciile în cloud folosite sunt:
 #### 1.MongoDB --> baza de date NoSQL cu ajutorul căreia sunt stocate informațiile rețetelor: denumire, timp de preparare, instrucțiuni, ingrediente și link către imagine. 
