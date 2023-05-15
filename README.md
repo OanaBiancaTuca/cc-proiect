@@ -17,7 +17,7 @@ Aplicatia a fost deployata si se poate accesa aici:
 https://cc-proiect-sand.vercel.app/
 
 # Link Video
-Scurt video de prezentare: +++++
+Scurt video de prezentare: https://youtu.be/McYPzfqncRs
 
 # 2.Descriere problemă 
 Aplicația de tip SaaS pentru stocarea și descoperirea de rețete culinare este gândită pentru a rezolva probleme ale utilizatorilor, precum:
